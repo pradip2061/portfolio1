@@ -11,7 +11,7 @@ function About() {
       });
     }, []);
   return (
-    <div className='bg-darkblue flex flex-col border-2 border-t-white w-full h-screen items-center gap-y-10 md:h-full md:pb-40 lg:gap-y-1 overflow-y-hidden  overflow-x-hidden lg:h-screeb lg:pb-20' id='about'>
+    <div className='bg-darkblue flex flex-col  w-full h-screen items-center gap-y-10 md:h-full md:pb-40 lg:gap-y-1 overflow-y-hidden  overflow-x-hidden lg:h-screeb lg:pb-20' id='about'>
         <h1 className='text-3xl text-white font-Nunito underline mt-16'>About Me</h1>
         <div className='flex flex-col  items-center md:flex-row  md:ml-40 lg:flex  lg:flex-row lg:mt-20 lg:gap-x-[8rem]  '>
             <div className='lg:ml-[45rem]' data-aos='fade-up'>
