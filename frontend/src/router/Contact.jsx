@@ -14,7 +14,7 @@ function Contact() {
             });
           }, []);
   return (
-    <div className='w-full  bg-darkblue border-2 border-t-white flex flex-col p-10 gap-y-10 items-center border-l-0 border-r-0   lg:justify-center lg:gap-y-28' id='contact'>
+    <div className='w-full  bg-darkblue  flex flex-col p-10 gap-y-10 items-center border-l-0 border-r-0   lg:justify-center lg:gap-y-28' id='contact'>
     <h1 className='text-3xl text-white font-Nunito underline mt-10'  data-aos='fade-up'>Contact Me</h1>
         <div className='  flex flex-col  gap-y-10  md:flex-row md:gap-x-5 lg:flex lg:flex-row lg:gap-x-10'>
         <ContactCard icon={<IoLocationOutline/>} detail="Surkhet,Nepal" />

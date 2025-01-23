@@ -11,7 +11,7 @@ function Skill() {
         });
       }, []);
   return (
-    <div className='w-full bg-darkblue flex flex-col gap-y-10 border-t-2 border-orange items-center p-10  md:pt-20' id='skill'>
+    <div className='w-full bg-darkblue flex flex-col gap-y-10  items-center p-10  md:pt-20' id='skill'>
         <h1 className='text-3xl text-white underline font-Nunito mt-10 lg:mt-20' data-aos='fade-up'>SKILLS</h1>
         <div className='flex flex-col gap-y-12  md:flex-row md:flex-wrap md:justify-center md:gap-x-10 md:gap-y-10  lg:flex lg:flex-row lg:flex-wrap lg:flex-grow-0 lg:gap-20 lg:ml-48 lg:justify-start '>
             <div className='flex flex-col gap-y-4' data-aos='fade-up'>
