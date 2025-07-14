@@ -11,8 +11,8 @@ function About() {
       });
     }, []);
   return (
-    <div className='bg-darkblue flex flex-col  w-full h-screen items-center gap-y-10 md:h-full md:pb-40 lg:gap-y-1 overflow-y-hidden  overflow-x-hidden lg:h-screeb lg:pb-20' id='about'>
-        <h1 className='text-3xl text-white font-Nunito underline mt-16'>About Me</h1>
+    <div className='flex flex-col bg-gray-100 w-full h-screen items-center gap-y-10 md:h-full md:pb-40 lg:gap-y-1 overflow-y-hidden  overflow-x-hidden lg:h-screeb lg:pb-20' id='about'>
+        <h1 className='text-3xl text-black font-Nunito underline mt-16'>About Me</h1>
         <div className='flex flex-col  items-center md:flex-row  md:ml-40 lg:flex  lg:flex-row lg:mt-20 lg:gap-x-[8rem]  '>
             <div className='lg:ml-[45rem]' data-aos='fade-up'>
                 <img src={img} className='w-60 h-60 border-2 border-white  md:w-72 lg:w-96 lg:h-72'/>
@@ -36,12 +36,12 @@ function About() {
   </div>
 </div>
 <div className='text-white flex flex-col lg:gap-y-8  lg:mb-28'>
-<h1 className='text-2xl font-Nunito mt-16 lg:text-4xl '>A Full stack developer</h1>
-<h1 className=' text-lg font-Nunito mt-5 lg:text-2xl  '> My name is <span className='text-lg font-Nunito text-orange lg:text-2xl'>Pradip Kumar Singh</span> from nepal.
+<h1 className='text-2xl font-Nunito mt-16 lg:text-4xl text-gray-800 '>A Full stack developer</h1>
+<h1 className=' text-lg font-Nunito mt-5 lg:text-2xl text-gray-800  '> My name is <span className='text-lg font-Nunito text-orange lg:text-2xl'>Pradip Kumar Singh</span> from nepal.
 </h1>
 <div>
-<h1 className='text-lg font-Nunito mt-9 lg:text-2xl '>Graduate in BTECHCSE from <span className='text-orange'>Quantum University</span></h1>
-<h1 className='text-lg font-Nunito lg:text-2xl '>Roorkee Dehradhun,India</h1>
+<h1 className='text-lg font-Nunito mt-9 lg:text-2xl text-gray-800 '>Graduate in BTECHCSE from <span className='text-orange'>Quantum University</span></h1>
+<h1 className='text-lg font-Nunito lg:text-2xl text-gray-800 '>Roorkee Dehradhun,India</h1>
 </div>
 
             </div>

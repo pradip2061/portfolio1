@@ -5,7 +5,7 @@ import img from "../assets/own.webp"
 import { MdArrowRight } from "react-icons/md";
 import About from './About';
 import Skill from './Skill';
-import Projects from './Projects';
+import Projects from './Projects'
 import Contact from './Contact';
 import Footer from '../components/Footer';
 import 'aos/dist/aos.css';
