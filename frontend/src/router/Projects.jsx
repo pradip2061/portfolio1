@@ -1,45 +1,157 @@
-import React from 'react';
-import { ExternalLink } from 'lucide-react';
-import interview from '../assets/interview.png'
-const  Projects =() => {
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { ExternalLink, Github } from "lucide-react";
+import { motion } from "framer-motion";
+
+const Projects = () => {
   const projects = [
     {
-      title: 'Interview Website',
-      description: 'A full-stack interview website with React, Node.js, and MongoDB',
-      image: interview,
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      link: 'https://interview-website-nine.vercel.app/',
-    }
+      id: 1,
+      title: "NetflixGPT",
+      description:
+        "Movie discovery app with Firebase authentication and recommendations.",
+      image:
+        "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["React", "Firebase", "TMDB API", "Tailwind CSS"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      id: 2,
+      title: "Sky-Weather",
+      description:
+        "Real-time weather dashboard with forecasts and location-based insights.",
+      image:
+        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["React", "OpenWeather API", "Framer Motion"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      id: 3,
+      title: "E-Commerce Platform",
+      description:
+        "Modern e-commerce platform with payment integration and product filtering.",
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["Next.js", "Stripe", "MongoDB"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
   ];
 
+  const [visibleId, setVisibleId] = useState(null);
+  const refs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio === 1) {
+            setVisibleId(Number(entry.target.dataset.id));
+          }
+        });
+      },
+      { threshold: [0, 0.5, 1] }
+    );
+
+    refs.current.forEach((ref) => ref && observer.observe(ref));
+    return () => {
+      refs.current.forEach((ref) => ref && observer.unobserve(ref));
+    };
+  }, []);
+
   return (
-    <section id="project" className="py-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Featured Projects</h2>
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 lg:px-0">
-          {projects.map(({ title, description, image, technologies, link }) => (
-            <div key={title} className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transform transition duration-300">
-              <img src={image} alt={title} className="w-full h-40 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
-                <p className="text-gray-700 mb-4 text-sm">{description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {technologies.map((tech) => (
-                    <span key={tech} className="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded">
-                      {tech}
-                    </span>
-                  ))}
+    <section id="projects" className="py-16 sm:py-20 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4 sm:px-6">
+        {/* Section Heading */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+            My <span className="text-primary-500">Projects</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+            Scroll down to explore my projects — only the focused card stays clear.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="flex flex-col gap-12 sm:gap-16">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              ref={(el) => (refs.current[index] = el)}
+              data-id={project.id}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.3 }}
+              className={`transition-all duration-500 ${
+                visibleId === project.id
+                  ? "blur-0 scale-100 opacity-100"
+                  : "blur-sm scale-95 opacity-70"
+              }`}
+            >
+              <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                <div className="flex flex-col lg:flex-row">
+                  {/* Image */}
+                  <motion.div
+                    className="w-full lg:w-1/2"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-52 sm:h-64 md:h-72 lg:h-full object-cover"
+                    />
+                  </motion.div>
+
+                  {/* Content */}
+                  <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center text-center lg:text-left">
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-5 sm:mb-6 text-base sm:text-lg leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Tech stack */}
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-6 sm:mb-8">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-white/80 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm border border-gray-200 dark:border-gray-600"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
+                      <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.liveUrl}
+                        className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-all duration-200 font-medium text-sm sm:text-base"
+                      >
+                        <ExternalLink size={16} className="sm:size-18" />
+                        View Live
+                      </motion.a>
+                      <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.githubUrl}
+                        className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-primary-500 hover:text-primary-500 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base"
+                      >
+                        <Github size={16} className="sm:size-18" />
+                        Code
+                      </motion.a>
+                    </div>
+                  </div>
                 </div>
-                <a
-                  href={link}
-                  className="text-orange-500 font-medium hover:text-orange-600 inline-flex items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project <ExternalLink size={16} className="ml-1" />
-                </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -47,4 +159,4 @@ const  Projects =() => {
   );
 };
 
-export default Projects
+export default Projects;

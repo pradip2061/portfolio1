@@ -1,55 +1,124 @@
-import React, { useEffect } from 'react'
-import img from '../assets/about.jpg'
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import React, { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import { Code2, GraduationCap, MapPin } from "lucide-react";
+import about from "../assets/own.webp";
+
 function About() {
   useEffect(() => {
-      AOS.init({
-        duration: 1000,
-        offset:120,
-        once:false 
-      });
-    }, []);
-  return (
-    <div className='flex flex-col bg-gray-100 w-full h-screen items-center gap-y-10 md:h-full md:pb-40 lg:gap-y-1 overflow-y-hidden  overflow-x-hidden lg:h-screeb lg:pb-20' id='about'>
-        <h1 className='text-3xl text-black font-Nunito underline mt-16'>About Me</h1>
-        <div className='flex flex-col  items-center md:flex-row  md:ml-40 lg:flex  lg:flex-row lg:mt-20 lg:gap-x-[8rem]  '>
-            <div className='lg:ml-[45rem]' data-aos='fade-up'>
-                <img src={img} className='w-60 h-60 border-2 border-white  md:w-72 lg:w-96 lg:h-72'/>
-            </div>
-            <div className='  w-screen flex  items-center gap-x-10  px-10 ' data-aos='fade-up'>
-            <div className=" flex  justify-center items-center relative lg:mb-28">
-  <div className="absolute inset-y-0 left-1/2 w-0.5 h-60 bg-orange lg:h-80  "></div>
-  <div className="flex flex-col space-y-16 relative mt-5 lg:mt-10 lg:space-y-26 ">
-    <div className="relative">
-      <div className="h-4 w-4 rounded-full bg-white border-2 border-orange"></div>
-      <div className="absolute left-6 transform -translate-x-1/2 top-1/2 w-5 h-0.5 bg-orange"></div>
-    </div>
-    <div className="relative">
-      <div className="h-4 w-4 rounded-full bg-white border-2 border-orange"></div>
-      <div className="absolute left-6 transform -translate-x-1/2 top-1/2 w-5 h-0.5 bg-orange"></div>
-    </div>
-    <div className="relative">
-      <div className="h-4 w-4 rounded-full bg-white border-2 border-orange"></div>
-      <div className="absolute left-6 transform -translate-x-1/2 top-1/2 w-5 h-0.5 bg-orange"></div>
-    </div>
-  </div>
-</div>
-<div className='text-white flex flex-col lg:gap-y-8  lg:mb-28'>
-<h1 className='text-2xl font-Nunito mt-16 lg:text-4xl text-gray-800 '>A Full stack developer</h1>
-<h1 className=' text-lg font-Nunito mt-5 lg:text-2xl text-gray-800  '> My name is <span className='text-lg font-Nunito text-orange lg:text-2xl'>Pradip Kumar Singh</span> from nepal.
-</h1>
-<div>
-<h1 className='text-lg font-Nunito mt-9 lg:text-2xl text-gray-800 '>Graduate in BTECHCSE from <span className='text-orange'>Quantum University</span></h1>
-<h1 className='text-lg font-Nunito lg:text-2xl text-gray-800 '>Roorkee Dehradhun,India</h1>
-</div>
+    AOS.init({
+      duration: 1000,
+      offset: 120,
+      once: false,
+    });
+  }, []);
 
+  return (
+    <section id="about" className="py-16 sm:py-20 bg-gray-800">
+      <div className="container mx-auto px-4 sm:px-6">
+        {/* Section Heading */}
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 sm:mb-16 text-white">
+          About <span className="text-orange">Me</span>
+        </h2>
+
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          {/* Left - Image */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-[28rem] lg:h-[34rem]">
+              <img
+                src={about}
+                alt="Working at desk"
+                className="rounded-2xl shadow-2xl w-full h-full object-cover"
+              />
+              <div className="absolute -bottom-5 -right-5 bg-orange text-white p-4 sm:p-6 rounded-2xl">
+                <Code2 size={28} className="sm:size-32" />
+              </div>
             </div>
+          </div>
+
+          {/* Right - Content */}
+          <div className="w-full lg:w-1/2">
+            <div className="space-y-8">
+              {/* Full Stack */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-1 bg-orange h-12 sm:h-16 rounded-full mt-1"></div>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white">
+                    A Full Stack Developer
+                  </h3>
+                  <p className="text-gray-400 text-base sm:text-lg">
+                    Passionate about creating innovative web solutions and
+                    bringing ideas to life through code.
+                  </p>
+                </div>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-1 bg-orange h-12 sm:h-16 rounded-full mt-1"></div>
+                <div>
+                  <h4 className="text-lg sm:text-xl font-semibold mb-2 flex flex-wrap items-center gap-2 text-white">
+                    <MapPin size={18} className="text-orange" />
+                    My name is{" "}
+                    <span className="text-orange">Pradip Kumar Singh</span> from
+                    Nepal
+                  </h4>
+                  <p className="text-gray-400 text-sm sm:text-base">
+                    Based in the beautiful landscapes of Nepal, I bring a unique
+                    perspective to web development.
+                  </p>
+                </div>
+              </div>
+
+              {/* Education */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-1 bg-orange h-12 sm:h-16 rounded-full mt-1"></div>
+                <div>
+                  <h4 className="text-lg sm:text-xl font-semibold mb-2 flex flex-wrap items-center gap-2 text-white">
+                    <GraduationCap size={18} className="text-orange" />
+                    Graduate in BTECHCSE from{" "}
+                    <span className="text-orange">Quantum University</span>
+                  </h4>
+                  <p className="text-gray-400 text-sm sm:text-base">
+                    Roorkee Dehradhun, India - Equipped with strong technical
+                    foundations and modern development practices.
+                  </p>
+                </div>
+              </div>
             </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-10 sm:mt-12 pt-8 sm:pt-12">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-orange mb-1 sm:mb-2">
+                  50+
+                </div>
+                <div className="text-gray-400 text-sm sm:text-base">
+                  Projects
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-orange mb-1 sm:mb-2">
+                  2+
+                </div>
+                <div className="text-gray-400 text-sm sm:text-base">
+                  Years Exp
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-orange mb-1 sm:mb-2">
+                  100%
+                </div>
+                <div className="text-gray-400 text-sm sm:text-base">
+                  Satisfaction
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-    </div>
-  )
+      </div>
+    </section>
+  );
 }
 
-export default About
+export default About;

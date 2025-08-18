@@ -1,67 +1,84 @@
-import React, { useState,useRef,useEffect } from 'react'
-import { RiMenu3Fill } from "react-icons/ri";
-import{motion} from "framer-motion"
-function Nav() {
-  const[show,setShow]=useState(false)
-  const shows=()=>{
-     setShow(true)
-  }
-  const[link,setLink]=useState('home')
-  useEffect(() => {
-    if (show) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+import React, { useState, useEffect } from "react";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FiHome } from "react-icons/fi";
+import { LuSquareUser, LuSquareCode, LuBrain } from "react-icons/lu";
+import { CgMail } from "react-icons/cg";
 
-    // Cleanup to avoid side effects
-    return () => {
-      document.body.style.overflow = 'auto';
+function Nav() {
+  const [active, setActive] = useState("home");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const handleScroll = () => {
+      let current = "home";
+      const scrollY = window.scrollY + 200;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.id;
+        }
+      });
+
+      setActive(current);
     };
-  }, [show]);
-const links=(link)=>{
-setLink(link)
-setShow(false)
-}
- 
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = [
+    { href: "#home", id: "home", icon: <FiHome className="w-6 h-6" />, label: "Home" },
+    { href: "#about", id: "about", icon: <LuSquareUser className="w-6 h-6" />, label: "About" },
+    { href: "#skill", id: "skill", icon: <LuBrain className="w-6 h-6" />, label: "Skill" },
+    { href: "#project", id: "project", icon: <LuSquareCode className="w-6 h-6" />, label: "Projects" },
+    { href: "#contact", id: "contact", icon: <CgMail className="w-6 h-6" />, label: "Contact" },
+    { href: "https://linkedin.com", id: "linkedin", icon: <FaLinkedinIn className="w-6 h-6" />, label: "LinkedIn", external: true }
+  ];
 
   return (
-    <div className='h-16 flex  gap-x-20  fixed border-b-2 border-white z-50 w-screen  justify-center items-center bg-transparent backdrop-blur md:gap-x-96 lg:gap-x-64 '>
-    
-    <div>
-       <h1 className='text-2xl font-Nunito text-white lg:text-4xl'>pradip <span className='text-orange'>kumar</span></h1>
-    </div>
-    <div className='hidden lg:flex gap-20 text-lg font-bold'>
-    <a className={`${link=='home'?'text-orange':'text-white'}  px-2 rounded-2xl hover:border  border-orange active:text-orange`} href='#home' onClick={()=>links('home')}>home</a>
-            <a className={`${link=='project'?'text-orange':'text-white'}  px-2 rounded-2xl hover:border  border-orange  active:text-orange`} href='#project' onClick={()=>links('project')}> projects </a>
-            <a className={`${link=='skill'?'text-orange':'text-white'} px-2 rounded-2xl hover:border  border-orange  active:text-orange`} href='#skill' onClick={()=>links('skill')}>skills</a>
-            <a className={`${link=='contact'?'text-orange':'text-white'} px-2 rounded-2xl hover:border  border-orange active:text-orange`} href='#contact' onClick={()=>links('contact')}>contact</a>
-    </div>
+    <div className="fixed z-20 w-full flex justify-center px-4">
+      {/* Nav container */}
+      <div
+        className="
+          bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 
+          border border-gray-700 rounded-full 
+          flex justify-between items-center
+          px-6 py-3
+          w-[90%] bottom-2 lg:bottom-2 md:bottom-auto md:w-[30%] md:mt-4
+          fixed md:relative
+        "
+      >
+        {navItems.map((item, index) => (
+          <div key={index} className="relative group flex justify-center">
+            <a
+              href={item.href}
+              target={item.external ? "_blank" : "_self"}
+              rel={item.external ? "noopener noreferrer" : ""}
+              className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center
+                ${
+                  active === item.id
+                    ? "bg-orange text-white scale-110 shadow-lg"
+                    : "text-white hover:bg-gray-500"
+                }`}
+              onClick={() => !item.external && setActive(item.id)}
+            >
+              {item.icon}
+            </a>
 
-   <div className='flex items-center gap-x-4'>
-   <a href='#contact'><button className='font-Nunito text-lg border-2  border-orange text-white p-1 hover:bg-orange mt-2 '>Hire Me!</button></a>
-        <div className=' lg:hidden hover:border rounded-full p-1 '>
-        <RiMenu3Fill className='text-2xl text-white' onClick={shows}/>
-        </div>
+            {/* Tooltip (only visible on md+ screens) */}
+            <span className="hidden md:block absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 text-sm rounded-md bg-white text-black opacity-0 group-hover:opacity-100 transition z-10">
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
-    { show?
-      <div className=' absolute w-screen h-[50rem] z-50   mt-[44rem]  bg-transparent backdrop-blur'>
-  <motion.div  animate={{ width:show?"250px":"0px" ,transition:{
-    duration:4,
-    type:"spring",
-    damping:9
-  }}}
-    className='absolute  h-screen gap-8 text-lg font-bold  tracking-wide flex flex-col    items-center p-10 bg-darkblue shadow-sm shadow-white ' >
-            <h1 className='text-white text-lg mr-48 mb-10' onClick={()=>setShow(false)}>X</h1>
-            <a className={`${link=='home'?'text-orange':'text-white'}  px-2 rounded-2xl hover:border  border-orange active:text-orange`} href='#home' onClick={()=>links('home')}>home</a>
-            <a className={`${link=='project'?'text-orange':'text-white'} px-2 rounded-2xl hover:border  border-orange  active:text-orange`} href='#project' onClick={()=>links('project')}> projects </a>
-            <a className={`${link=='skill'?'text-orange':'text-white'} px-2 rounded-2xl hover:border  border-orange  active:text-orange`} href='#skill' onClick={()=>links('skill')}>skills</a>
-            <a className={`${link=='contact'?'text-orange':'text-white'} px-2 rounded-2xl hover:border  border-orange  active:text-orange`} href='#contact' onClick={()=>links('contact')}>contact</a>
-        </motion.div>
-        </div>:null
-      }
-    </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

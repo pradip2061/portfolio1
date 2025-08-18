@@ -33,7 +33,19 @@ export default {
         bluedark:"#37C0FE",
         orange:"rgb(249,115,22)",
         darkpurple:"rgb(31,41,55)",
-        fadedark:"rgb(156,163,175)"
+        fadedark:"rgb(156,163,175)",
+        primary: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
+        },
     
       },
       fontFamily: {
@@ -58,10 +70,23 @@ export default {
             borderRadius:"60% 40% 30% 70% / 60% 30% 70% 40%"
           }
         },
+        'spin-reverse': {
+          from: { transform: 'rotate(360deg)' },
+          to: { transform: 'rotate(0deg)' },
+        },
+          'showName': {
+          '0%, 70%': { opacity: 0, transform: 'translateY(10px)' },
+          '75%, 85%': { opacity: 1, transform: 'translateY(0)' },
+          '90%, 100%': { opacity: 0, transform: 'translateY(10px)' },
+        },
       },
       animation:{
         animate:'animate 5s ease-in-out infinite',
-      }
+        'spin-slow': 'spin 6s linear infinite',
+        'spin-reverse': 'spin-reverse 8s linear infinite',
+        'show-name': 'showName 6s linear infinite',
+      },
+      
     }
   },
   plugins: [],
