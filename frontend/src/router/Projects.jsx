@@ -3,40 +3,64 @@ import React, { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
 
+// Importing project images
+import interviewwebsite from "../assets/interview.png";
+import busticket from "../assets/bus ticket book.png";
+import vidshare from "../assets/vidshare.png";
+import blog from "../assets/blog.png";
+import taskmanager from "../assets/task.png";
+
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "NetflixGPT",
+      title: "Interview Prep Website",
       description:
-        "Movie discovery app with Firebase authentication and recommendations.",
-      image:
-        "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Firebase", "TMDB API", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A MERN-based interview preparation platform with authentication, resources, and practice tests.",
+      image: interviewwebsite,
+      technologies: ["MERN Stack", "Tailwind CSS", "JWT Auth"],
+      liveUrl: "https://interview-website-nine.vercel.app/",
+      githubUrl: "https://github.com/pradip2061/Interview-Website",
     },
     {
       id: 2,
-      title: "Sky-Weather",
+      title: "Bus Ticket Booking",
       description:
-        "Real-time weather dashboard with forecasts and location-based insights.",
-      image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "OpenWeather API", "Framer Motion"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "Online bus ticket booking system with seat selection, payments, and booking history.",
+      image: busticket,
+      technologies: ["MERN Stack", "Tailwind CSS", "Stripe"],
+      liveUrl: "https://bus-ticket-b9go.vercel.app/",
+      githubUrl: "https://github.com/pradip2061/bus-ticket",
     },
     {
       id: 3,
-      title: "E-Commerce Platform",
+      title: "VidShare",
       description:
-        "Modern e-commerce platform with payment integration and product filtering.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Next.js", "Stripe", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A video-sharing platform like TikTok/YouTube built with MERN and cloud storage integration.",
+      image: vidshare,
+      technologies: ["MERN Stack", "Tailwind CSS", "Cloudinary"],
+      liveUrl: "https://reel-website-6bav.vercel.app",
+      githubUrl: "https://github.com/pradip2061/reel-website",
+    },
+    {
+      id: 4,
+      title: "Blog Platform",
+      description:
+        "A blogging platform with authentication, markdown editor, and comments system.",
+      image: blog,
+      technologies: ["MERN Stack", "Tailwind CSS", "JWT Auth"],
+      liveUrl: "https://personal-blog-delta-ashen.vercel.app/",
+      githubUrl: "https://github.com/pradip2061/PersonalBlog",
+    },
+    {
+      id: 5,
+      title: "Task Manager",
+      description:
+        "A collaborative task manager with real-time updates using WebSockets.",
+      image: taskmanager,
+      technologies: ["MERN Stack", "Tailwind CSS", "Socket.io"],
+      liveUrl: "https://task-manager-vert-sigma.vercel.app/",
+      githubUrl: "https://github.com/pradip2061/Task-Manager",
     },
   ];
 
@@ -70,7 +94,7 @@ const Projects = () => {
             My <span className="text-primary-500">Projects</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Scroll down to explore my projects — only the focused card stays clear.
+            Scroll down to explore my MERN stack projects — only the focused card stays clear.
           </p>
         </div>
 
