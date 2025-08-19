@@ -35,7 +35,7 @@ function Nav() {
     { href: "#home", id: "home", icon: <FiHome className="w-6 h-6" />, label: "Home" },
     { href: "#about", id: "about", icon: <LuSquareUser className="w-6 h-6" />, label: "About" },
     { href: "#skill", id: "skill", icon: <LuBrain className="w-6 h-6" />, label: "Skill" },
-    { href: "#project", id: "project", icon: <LuSquareCode className="w-6 h-6" />, label: "Projects" },
+    { href: "#projects", id: "projects", icon: <LuSquareCode className="w-6 h-6" />, label: "Projects" },
     { href: "#contact", id: "contact", icon: <CgMail className="w-6 h-6" />, label: "Contact" },
     { href: "https://linkedin.com", id: "linkedin", icon: <FaLinkedinIn className="w-6 h-6" />, label: "LinkedIn", external: true }
   ];

@@ -67,7 +67,7 @@ function Home() {
 
 
   {/* Subheading */}
-  <h1 className="lg:mt-5  text-lg lg:text-2xl text-gray-300 font-Nunito lg:text-white leading-relaxed  px-5 pl-10 lg:px-0">
+  <h1 className="lg:mt-5  text-lg lg:text-2xl text-gray-300 font-Nunito lg:text-white leading-relaxed  px-5 pl-12 lg:px-0">
     A passionate Full-Stack Developer crafting beautiful and functional web experiences that solve real-world problems through code.
   </h1>
 
