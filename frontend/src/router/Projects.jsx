@@ -36,7 +36,7 @@ const Projects = () => {
       id: 3,
       title: "VidShare",
       description:
-        "A video-sharing platform like TikTok/YouTube built with MERN and cloud storage integration.",
+        "A video-sharing platform like TikTok/YouTube built with MERN and cloudinary storage integration.",
       image: vidshare,
       technologies: ["MERN Stack", "Tailwind CSS", "Cloudinary"],
       liveUrl: "https://reel-website-6bav.vercel.app",
@@ -56,7 +56,7 @@ const Projects = () => {
       id: 5,
       title: "Task Manager",
       description:
-        "A collaborative task manager with real-time updates using WebSockets.",
+        "A collaborative task manager with proper progress for each week.",
       image: taskmanager,
       technologies: ["MERN Stack", "Tailwind CSS", "Socket.io"],
       liveUrl: "https://task-manager-vert-sigma.vercel.app/",
