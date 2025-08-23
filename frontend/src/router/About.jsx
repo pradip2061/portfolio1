@@ -34,7 +34,7 @@ function About() {
                 className="rounded-2xl shadow-2xl w-full h-full object-cover"
               />
               <div className="absolute -bottom-5 -right-5 bg-orange-400 text-white p-4 sm:p-6 rounded-2xl">
-                <Code2 size={28} className="sm:size-32" />
+                <Code2 size={28} className="sm:size-32 lg:size-14" />
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ function About() {
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white ">
                     A Full Stack Developer
                   </h3>
-                  <p className="text-gray-300 text-lg sm:text-base  font-mono">
+                  <p className="text-gray-300 text-lg sm:text-base  lg:text-xl  font-mono">
                     Passionate about creating innovative web solutions and
                     bringing ideas to life through code.
                   </p>
@@ -66,7 +66,7 @@ function About() {
                     <span className="text-orange-400 ">Pradip Kumar Singh</span>{" "}
                     from Nepal
                   </h4>
-                  <p className="text-gray-300 text-lg sm:text-base  font-mono">
+                  <p className="text-gray-300 text-lg sm:text-base  lg:text-xl  font-mono">
                     Based in the beautiful landscapes of Nepal, I bring a unique
                     perspective to web development.
                   </p>
@@ -82,7 +82,7 @@ function About() {
                     Graduate in BTECH CSE from{" "}
                     <span className="text-orange-400 ">Quantum University</span>
                   </h4>
-                  <p className="text-gray-300 text-lg sm:text-base  font-mono">
+                  <p className="text-gray-300 text-lg sm:text-base lg:text-xl  font-mono">
                     Roorkee Dehradhun, India - Equipped with strong technical
                     foundations and modern development practices.
                   </p>

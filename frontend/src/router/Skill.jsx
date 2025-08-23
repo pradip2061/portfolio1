@@ -48,7 +48,7 @@ const Skill = () => {
   return (
     <section
       id="skill"
-      className="w-full py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex flex-col items-center font-nunito"
+      className="w-full min-h-screen py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex flex-col items-center font-nunito"
     >
       {/* Main Heading */}
       <motion.h1
@@ -74,7 +74,7 @@ const Skill = () => {
           <motion.div
             key={category.title}
             variants={cardVariants}
-            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(249,115,22,0.4)" }}
+            whileHover={{ scale: 1.05}}
             className="bg-gray-800 border border-gray-700 rounded-2xl p-8 shadow-md transition-all
             w-full max-w-sm mx-auto"
           >
@@ -91,7 +91,7 @@ const Skill = () => {
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                   className="bg-gray-700 rounded-lg px-4 py-3 text-gray-200 font-medium 
-                  hover:bg-orange-500 hover:text-black transition text-center cursor-pointer"
+                  hover:bg-orange-400 hover:text-black transition text-center cursor-pointer"
                 >
                   {skill}
                 </motion.li>

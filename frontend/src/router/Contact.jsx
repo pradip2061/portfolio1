@@ -6,7 +6,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-orange">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-orange-400">Get In Touch</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             I’m currently open to new opportunities and collaborations. Feel free to reach out!
           </p>
@@ -65,7 +65,7 @@ const Contact = () => {
               Feel free to reach out via email or connect with me on social media.  
               I’m happy to chat about projects, collaborations, or just say hello!
             </p>
-            <Mail size={48} className="text-orange-500 mb-2" color='orange' />
+            <Mail size={48} className="text-orange-400 mb-2" />
             <a
               href="mailto:john.smith@email.com"
               className="text-white font-semibold hover:underline"
