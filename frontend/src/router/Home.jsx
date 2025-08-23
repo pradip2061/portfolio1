@@ -73,11 +73,11 @@ function Home() {
 
   {/* Buttons */}
   <div className="flex flex-wrap gap-4 mt-10 ml-8 lg:ml-0">
-    <button className="group  px-2 lg:px-6 py-3 bg-primary-500 text-white rounded-xl hover:bg-primary-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 font-medium">
+    <button className="group  px-2 lg:px-6 py-3 bg-orange-500 text-white rounded-xl hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 font-medium">
       More About Me
       <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
     </button>
-    <button className="  px-2 lg:px-6 py-3 border-2 border-gray-600 text-gray-300 hover:border-primary-500 hover:text-primary-500 hover:shadow-lg hover:-translate-y-1 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 font-medium">
+    <button className="  px-2 lg:px-6 py-3 border-2 border-gray-600 text-gray-300 hover:border-orange-500 hover:text-orange-500 hover:shadow-lg hover:-translate-y-1 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 font-medium">
       <Download size={20} />
       Download CV
     </button>
@@ -86,7 +86,7 @@ function Home() {
 
 <div className="relative w-[200px] h-[200px] lg:w-[280px] lg:h-[280px] flex items-center justify-center pb-10">
   {/* Rotating Ring */}
-  <div className="absolute w-full h-full rounded-full border-4 border-transparent border-t-orange border-b-orange animate-spin-slow"></div>
+  <div className="absolute w-full h-full rounded-full border-4 border-transparent border-t-orange-400 border-b-orange-400 animate-spin-slow"></div>
   {/* Image */}
   <img
     src={about}
@@ -94,7 +94,7 @@ function Home() {
     className=" w-44 h-44 lg:w-64 lg:h-64 object-cover rounded-full relative z-10"
   />
 <span className="absolute hidden lg:flex -bottom-10 text-lg font-semibold text-white animate-show-name z-20">
-  I&apos;M <span className='text-orange'>PRADIP KUMAR SINGH</span>
+  I&apos;M<span className='text-orange ml-1'>PRADIP KUMAR SINGH</span>
 </span>
 </div>
         </div>

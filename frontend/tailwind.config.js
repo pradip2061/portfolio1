@@ -31,7 +31,6 @@ export default {
         sky:"rgb(207,241,248)",
         mehendi:"rgb(245,245,245)",
         bluedark:"#37C0FE",
-        orange:"rgb(249,115,22)",
         darkpurple:"rgb(31,41,55)",
         fadedark:"rgb(156,163,175)",
         primary: {
