@@ -34,7 +34,7 @@ function About() {
                 className="rounded-2xl shadow-2xl w-full h-full object-cover"
               />
               <div className="absolute -bottom-5 -right-5 bg-orange-400 text-white p-4 sm:p-6 rounded-2xl">
-                <Code2 size={28} className="sm:size-32 lg:size-14" />
+                <Code2 className="w-7 h-7 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-14 lg:h-14" />
               </div>
             </div>
           </div>
